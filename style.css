@@ -2,7 +2,9 @@
   padding: 0;
   margin: 0;
 
-  outline: 1px solid rgba(0, 0, 0, 0.459);
+  /* outline: 1px solid rgba(0, 0, 0, 0.459); */
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .flex {
   display: flex;
@@ -11,7 +13,24 @@
   display: flex;
   flex-direction: column;
 }
-
+.block {
+  background-color: rgb(170, 118, 205);
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4) inset;
+  color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background-color: rgb(240, 240, 240);
+}
+.app-container {
+  height: 100%;
+  max-width: 500px;
+  margin: auto;
+  justify-content: center;
+}
 .numbers-container {
   display: grid;
   grid-template-areas:
@@ -22,50 +41,80 @@
     "by15 by15values";
 
   grid-template-columns: 1fr 2fr;
+  place-items: center;
 
   gap: 0.5rem;
   margin: 1rem;
+  background-color: rgb(152, 215, 249);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.5);
 }
 .numbers-counter {
   grid-area: button;
+  width: 80%;
+  max-width: 300px;
+  height: 80%;
+  box-sizing: border-box;
 
+  cursor: pointer;
   margin: 1rem;
   font-size: 50px;
+  font-weight: 700;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border: none;
+  background-color: rgb(255, 155, 83);
+  color: rgb(255, 255, 255);
 }
 .numbers-caption {
   grid-area: caption;
   text-align: center;
 
   padding: 1rem;
+  background-color: rgb(140, 198, 229);
+  /* box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3) inset; */
 }
 .numbers-label {
   font-size: 50px;
   text-align: center;
 
-  padding: 1rem;
+  padding: 0.5rem;
 }
 .numbers-label-2 {
   grid-area: by2;
+  background-color: white;
 }
 .numbers-label-3 {
   grid-area: by3;
+  background-color: rgb(255, 255, 180);
 }
 .numbers-label-5 {
   grid-area: by5;
+  background-color: rgb(181, 255, 181);
 }
 .numbers-label-15 {
   grid-area: by15;
+  background-color: rgb(255, 176, 176);
+}
+.numbers-section {
+  min-height: 100%;
+  min-width: 100%;
 }
 
 #divBy2Section {
   grid-area: by2values;
+  background-color: white;
 }
 #divBy3Section {
   grid-area: by3values;
+  background-color: rgb(255, 255, 180);
 }
 #divBy5Section {
   grid-area: by5values;
+  background-color: rgb(181, 255, 181);
 }
 #divBy15Section {
   grid-area: by15values;
+  background-color: rgb(255, 176, 176);
 }
