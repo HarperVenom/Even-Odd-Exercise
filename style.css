@@ -20,6 +20,7 @@
   color: rgba(0, 0, 0, 0.5);
   width: 100%;
   box-sizing: border-box;
+  padding: 0.7rem 0.5rem;
 }
 body {
   height: 100vh;
@@ -96,8 +97,6 @@ body {
 .numbers-label {
   font-size: 50px;
   text-align: center;
-
-  padding: 0.5rem;
 }
 .numbers-label-even {
   grid-area: even;
