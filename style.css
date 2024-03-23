@@ -27,25 +27,31 @@ body {
 }
 .app-container {
   height: 100%;
-  max-width: 500px;
+  max-width: 800px;
   margin: auto;
   justify-content: center;
+
+  font-size: 50px;
+  font-weight: 700;
 }
 .numbers-container {
+  position: relative;
   display: grid;
   grid-template-areas:
-    "caption button"
-    "by2 by2values"
-    "by3 by3values"
-    "by5 by5values"
-    "by15 by15values";
+    "button button button"
+    "even even evenValues"
+    "odd odd oddValues"
+    "empty empty empty"
+    "caption by3 by3values"
+    "caption by5 by5values"
+    "caption by15 by15values";
 
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr 10fr;
   place-items: center;
 
   gap: 0.5rem;
   margin: 1rem;
-  background-color: rgb(152, 215, 249);
+  background-color: rgb(198, 218, 226);
   padding: 1rem;
   border-radius: 1rem;
   box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.5);
@@ -59,20 +65,32 @@ body {
 
   cursor: pointer;
   margin: 1rem;
-  font-size: 50px;
+  font-size: 70px;
   font-weight: 700;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
   border: none;
   background-color: rgb(255, 155, 83);
   color: rgb(255, 255, 255);
 }
+.numbers-counter:hover {
+  background-color: rgb(255, 179, 124);
+}
+.numbers-counter:active {
+  background-color: rgb(253, 150, 76);
+  scale: 0.995;
+}
 .numbers-caption {
   grid-area: caption;
   text-align: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 60px;
+  padding-bottom: 50px;
 
   padding: 1rem;
-  background-color: rgb(140, 198, 229);
+  background-color: rgb(179, 198, 206);
   /* box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3) inset; */
 }
 .numbers-label {
@@ -81,10 +99,16 @@ body {
 
   padding: 0.5rem;
 }
-.numbers-label-2 {
-  grid-area: by2;
+.numbers-label-even {
+  grid-area: even;
   background-color: white;
 }
+.numbers-label-odd {
+  grid-area: odd;
+  background-color: rgb(113, 113, 113);
+  color: rgba(255, 255, 255, 0.8);
+}
+
 .numbers-label-3 {
   grid-area: by3;
   background-color: rgb(255, 255, 180);
@@ -98,13 +122,44 @@ body {
   background-color: rgb(255, 176, 176);
 }
 .numbers-section {
+  position: relative;
   min-height: 100%;
   min-width: 100%;
+
+  white-space: nowrap;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
 }
 
-#divBy2Section {
-  grid-area: by2values;
+.js-numberBlock {
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 0.5rem;
+  margin: 0 0.5rem;
+  background-color: inherit;
+  color: inherit;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+.js-numberBlock:hover {
+  outline: 2px solid white;
+}
+.js-numberBlock:active {
+  scale: 0.99;
+}
+
+#evenSection {
+  grid-area: evenValues;
   background-color: white;
+}
+#oddSection {
+  grid-area: oddValues;
+  background-color: rgb(113, 113, 113);
+  color: rgba(255, 255, 255, 0.8);
 }
 #divBy3Section {
   grid-area: by3values;

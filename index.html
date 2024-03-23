@@ -9,12 +9,15 @@
   <body>
     <div class="app-container flex-col">
       <div class="numbers-container">
-        <h1 class="numbers-caption block">Divided by</h1>
+        <h1 class="numbers-caption block">/</h1>
 
-        <button class="numbers-counter">0</button>
+        <button class="numbers-counter" id="counter-button">0</button>
 
-        <h2 class="numbers-label-2 numbers-label block">2</h2>
-        <div class="numbers-section block" id="divBy2Section"></div>
+        <h2 class="numbers-label-odd numbers-label block">Odd</h2>
+        <div class="numbers-section block" id="evenSection"></div>
+
+        <h2 class="numbers-label-even numbers-label block">Even</h2>
+        <div class="numbers-section block" id="oddSection"></div>
 
         <h2 class="numbers-label-3 numbers-label block">3</h2>
         <div class="numbers-section block" id="divBy3Section"></div>
@@ -26,5 +29,6 @@
         <div class="numbers-section block" id="divBy15Section"></div>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
