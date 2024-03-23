@@ -1,0 +1,71 @@
+* {
+  padding: 0;
+  margin: 0;
+
+  outline: 1px solid rgba(0, 0, 0, 0.459);
+}
+.flex {
+  display: flex;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.numbers-container {
+  display: grid;
+  grid-template-areas:
+    "caption button"
+    "by2 by2values"
+    "by3 by3values"
+    "by5 by5values"
+    "by15 by15values";
+
+  grid-template-columns: 1fr 2fr;
+
+  gap: 0.5rem;
+  margin: 1rem;
+}
+.numbers-counter {
+  grid-area: button;
+
+  margin: 1rem;
+  font-size: 50px;
+}
+.numbers-caption {
+  grid-area: caption;
+  text-align: center;
+
+  padding: 1rem;
+}
+.numbers-label {
+  font-size: 50px;
+  text-align: center;
+
+  padding: 1rem;
+}
+.numbers-label-2 {
+  grid-area: by2;
+}
+.numbers-label-3 {
+  grid-area: by3;
+}
+.numbers-label-5 {
+  grid-area: by5;
+}
+.numbers-label-15 {
+  grid-area: by15;
+}
+
+#divBy2Section {
+  grid-area: by2values;
+}
+#divBy3Section {
+  grid-area: by3values;
+}
+#divBy5Section {
+  grid-area: by5values;
+}
+#divBy15Section {
+  grid-area: by15values;
+}
