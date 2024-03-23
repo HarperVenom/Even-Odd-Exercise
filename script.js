@@ -21,25 +21,21 @@ const newNumberBlock = function (count) {
 function updateButton() {
   button.innerHTML = count;
 
-  if (count % 2 === 0) {
+  if (count % 15 === 0) {
+    sectionBy15.appendChild(newNumberBlock(count));
+    sectionBy15.scrollLeft = sectionBy15.scrollWidth;
+  } else if (count % 5 === 0) {
+    sectionBy5.appendChild(newNumberBlock(count));
+    sectionBy5.scrollLeft = sectionBy5.scrollWidth;
+  } else if (count % 3 === 0) {
+    sectionBy3.appendChild(newNumberBlock(count));
+    sectionBy3.scrollLeft = sectionBy3.scrollWidth;
+  } else if (count % 2 === 0) {
     sectionEven.appendChild(newNumberBlock(count));
     sectionEven.scrollLeft = sectionEven.scrollWidth;
   } else {
     sectionOdd.appendChild(newNumberBlock(count));
     sectionOdd.scrollLeft = sectionEven.scrollWidth;
-  }
-
-  if (count % 3 === 0) {
-    sectionBy3.appendChild(newNumberBlock(count));
-    sectionBy3.scrollLeft = sectionBy3.scrollWidth;
-  }
-  if (count % 5 === 0) {
-    sectionBy5.appendChild(newNumberBlock(count));
-    sectionBy5.scrollLeft = sectionBy5.scrollWidth;
-  }
-  if (count % 15 === 0) {
-    sectionBy15.appendChild(newNumberBlock(count));
-    sectionBy15.scrollLeft = sectionBy15.scrollWidth;
   }
 }
 function clickButton() {
